@@ -18,8 +18,8 @@ const NavBar = () => {
             <Link href='/'><AiFillBug/></Link>
             <ul className='flex space-x-6'>
                 {links.map(link =>
-                    <li>
-                        <Link key={link.href} href={link.href}
+                    <li key={link.href} >
+                        <Link href={link.href}
                             // className={`${currentPath === link.href ? 'text-zinc-900' : 'text-zinc-500 '} hover:text-zinc-800 transition-colors`}>{link.label}
                               className={classNames({
                                   'text-zinc-900': link.href === currentPath,
