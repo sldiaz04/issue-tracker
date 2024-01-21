@@ -19,7 +19,7 @@ export default function RootLayout({children}: { children: ReactNode }) {
         <body className={inter.className}>
         <Theme>
             <NavBar/>
-            <main>
+            <main className='p-5'>
                 {children}
             </main>
         </Theme>
