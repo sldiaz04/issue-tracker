@@ -9,6 +9,8 @@ interface Props {
 }
 
 const IssueDetailPage = async ({params}: Props) => {
+    // await delay(1000);// for debugging the loading indicator
+
     const issue = await prisma.issue.findUnique({
         where: {id: parseInt(params.id)}
     });
