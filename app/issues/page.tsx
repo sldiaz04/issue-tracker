@@ -1,13 +1,13 @@
 import {Table} from "@radix-ui/themes";
-import Link from "next/link";
 import prisma from '@/prisma/client'
 import IssueStatusBadge from "@/app/components/IssueStatusBadge";
 import delay from "delay";
 import IssueActions from "@/app/issues/IssueActions";
+import Link from "@/app/components/Link";
 
 const IssuesPage = async () => {
     const issues = await prisma.issue.findMany();
-    await delay(2000);
+    await delay(1000);// for debugging the loading indicator
 
     return (
         <div>
@@ -26,8 +26,8 @@ const IssuesPage = async () => {
                             <Table.Cell>
                                 <Link href={`/issues/${issue.id}`}>
                                     {issue.title}
-                                    <div className='block md:hidden'><IssueStatusBadge status={issue.status}/></div>
                                 </Link>
+                                <div className='block md:hidden'><IssueStatusBadge status={issue.status}/></div>
                             </Table.Cell>
                             <Table.Cell className='hidden md:table-cell'><IssueStatusBadge
                                 status={issue.status}/></Table.Cell>
