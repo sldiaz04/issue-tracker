@@ -38,4 +38,12 @@ const IssuesPage = async () => {
     );
 }
 
+// export const dynamic = 'force-dynamic';
+
+/*
+* revalidate
+* value=0, is the same as 'force-dynamic'
+* */
+export const revalidate = 0;
+
 export default IssuesPage;
