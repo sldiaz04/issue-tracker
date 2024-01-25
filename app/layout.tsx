@@ -5,7 +5,7 @@ import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import {ReactNode} from "react";
 import NavBar from "@/app/NavBar";
-import {Theme} from '@radix-ui/themes';
+import {Container, Theme} from '@radix-ui/themes';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -25,7 +25,9 @@ export default function RootLayout({children}: { children: ReactNode }) {
         <Theme appearance="light" accentColor="violet" radius="small">
             <NavBar/>
             <main className='p-5'>
-                {children}
+                <Container>
+                    {children}
+                </Container>
             </main>
             {/*<ThemePanel/>*/}
         </Theme>
