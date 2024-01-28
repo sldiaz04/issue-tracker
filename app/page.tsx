@@ -1,7 +1,7 @@
-import Pagination from "@/app/components/Pagination";
+import LatestIssue from "@/app/LatestIssue";
 
 export default function Home() {
     return (
-        <Pagination itemCount={20} pageSize={5} currentPage={1}/>
+        <LatestIssue/>
     )
 }
